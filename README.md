@@ -1,13 +1,27 @@
 # Go Chat
 
-This is a simple chat web app written in Go
+使用 Go 语言开发，kafka作为消息队列，websocket 进行客户端/服务端通信，然后使用vue来完成web界面显示。
 
-Just run the following
 
+使用方法，需要先将kafka服务启动，然后再运行代码。
+
+#### 1. 下载kafka
+```bash
+$ wget http://apache.mirrors.hoobly.com/kafka/2.5.0/kafka_2.12-2.5.0.tgz
+$ tar -xzf kafka_2.12-2.5.0.tgz
+$ cd kafka_2.12-2.5.0
 ```
-cd ./src
-go get github.com/gorilla/websocket
-go run main.go
+
+#### 2. 启动kafka服务
+```bash
+$ bin/zookeeper-server-start.sh config/zookeeper.properties # kafka 服务依赖于zookeeper
+$ bin/kafka-server-start.sh config/server.properties
 ```
 
-Then point your browser to http://localhost:8000
+#### 3. 运行此Go程序
+```
+$ cd ./src
+$ go run main.go
+```
+
+#### 4. 打开浏览器，访问 http://localhost:8000
