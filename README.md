@@ -25,3 +25,6 @@ $ go run main.go
 ```
 
 #### 4. 打开浏览器，访问 http://localhost:8000
+
+#### 5. 效果图
+![即时通讯效果图](./public/myGoChat.png)
